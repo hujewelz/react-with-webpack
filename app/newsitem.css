@@ -15,6 +15,10 @@
   flex-grow: 1;
 }
 
+.newsItem-title {
+  font-weight: bold;
+}
+
 .newsItem-domain {
   font-size: 8pt;
   margin-left: 5px;
@@ -23,4 +27,28 @@
 .newsItem-domain > a {
   color: #828282;
   text-decoration: none;
+}
+
+.newsItem-rank {
+  flex-basis: 25px;
+  font-size: 10pt;
+  text-align: right;
+}
+
+.newsItem-vote {
+  flex-basis: 15px;
+  text-align: center;
+}
+
+.newsItem-subtext {
+  font-size: 7pt;
+}
+
+.newsItem-subtext > a {
+  color: #828282;
+  text-decoration: none;
+}
+
+.newsItem-subtext > a:hover {
+  text-decoration: underline;
 }
