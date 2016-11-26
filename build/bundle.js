@@ -62,49 +62,19 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var listItems = [{
-	  "by": "bane",
-	  "descendants": 49,
-	  "id": 11600137,
-	  "kids": [11600476, 11600473, 11600501, 11600463, 11600452, 11600528, 11600421, 11600577, 11600483],
-	  "score": 56,
-	  "time": 1461985332,
-	  "title": "Yahoo's Marissa Mayer could get $155M in severance pay",
-	  "type": "story",
-	  "url": "http://www.latimes.com/business/technology/la-fi-0429-tn-marissa-mayer-severance-20160429-story.html"
-	}, {
-	  "by": "bane",
-	  "descendants": 49,
-	  "id": 11600138,
-	  "kids": [11600476, 11600473, 11600501, 11600463, 11600452, 11600528, 11600421, 11600577, 11600483],
-	  "score": 56,
-	  "time": 1461985332,
-	  "title": "Yahoo's Marissa Mayer could get $55M in severance pay",
-	  "type": "story",
-	  "url": "http://www.latimes.com/business/technology/la-fi-0429-tn-marissa-mayer-severance-20160429-story.html"
-	}, {
-	  "by": "bane",
-	  "descendants": 49,
-	  "id": 11600139,
-	  "kids": [11600476, 11600473, 11600501, 11600463, 11600452, 11600528, 11600421, 11600577, 11600483],
-	  "score": 56,
-	  "time": 1461985332,
-	  "title": "Yahoo's Marissa Mayer could get $55M in severance pay",
-	  "type": "story",
-	  "url": "http://www.latimes.com/business/technology/la-fi-0429-tn-marissa-mayer-severance-20160429-story.html"
-	}, {
-	  "by": "bane",
-	  "descendants": 49,
-	  "id": 11600140,
-	  "kids": [11600476, 11600473, 11600501, 11600463, 11600452, 11600528, 11600421, 11600577, 11600483],
-	  "score": 56,
-	  "time": 1461985332,
-	  "title": "Yahoo's Marissa Mayer could get $55M in severance pay",
-	  "type": "story",
-	  "url": "http://www.latimes.com/business/technology/la-fi-0429-tn-marissa-mayer-severance-20160429-story.html"
-	}];
+	function get(url) {
+	  return Promise.resolve(_jquery2.default.ajax(url));
+	}
 
-	(0, _reactDom.render)(_react2.default.createElement(_newslist2.default, { items: listItems }), (0, _jquery2.default)('#content')[0]);
+	get('https://hacker-news.firebaseio.com/v0/topstories.json').then(function (stories) {
+	  return Promise.all(stories.slice(0, 30).map(function (itemId) {
+	    return get('https://hacker-news.firebaseio.com/v0/item/' + itemId + '.json');
+	  }));
+	}).then(function (items) {
+	  (0, _reactDom.render)(_react2.default.createElement(_newslist2.default, { items: items }), (0, _jquery2.default)('#content')[0]);
+	}).catch(function (err) {
+	  console.log('error occur', err);
+	});
 
 /***/ },
 /* 1 */
@@ -48810,7 +48780,7 @@
 
 
 	// module
-	exports.push([module.id, ".newsItem {\n  color: #828282;\n  margin-top: 5px;\n  align-items: baseline;\n  display: flex;\n}\n\n.newsItem-titleLink {\n  color: black;\n  font-size: 10pt;\n  text-decoration: none;\n}\n\n.newsItem-itemText {\n  flex-grow: 1;\n}\n\n.newsItem-title {\n  font-weight: bold;\n}\n\n.newsItem-domain {\n  font-size: 8pt;\n  margin-left: 5px;\n}\n\n.newsItem-domain > a {\n  color: #828282;\n  text-decoration: none;\n}\n\n.newsItem-rank {\n  flex-basis: 25px;\n  font-size: 10pt;\n  text-align: right;\n}\n\n.newsItem-vote {\n  flex-basis: 15px;\n  text-align: center;\n}\n\n.newsItem-subtext {\n  font-size: 7pt;\n}\n\n.newsItem-subtext > a {\n  color: #828282;\n  text-decoration: none;\n}\n\n.newsItem-subtext > a:hover {\n  text-decoration: underline;\n}", ""]);
+	exports.push([module.id, ".newsItem {\n  color: #828282;\n  margin-top: 5px;\n  align-items: baseline;\n  display: flex;\n}\n\n.newsItem-titleLink {\n  color: black;\n  font-size: 10pt;\n  text-decoration: none;\n}\n\n.newsItem-itemText {\n  flex-grow: 1;\n}\n\n.newsItem-title {\n  font-weight: bold;\n}\n\n.newsItem-domain {\n  font-size: 8pt;\n  margin-left: 5px;\n}\n\n.newsItem-domain > a {\n  color: #828282;\n  text-decoration: none;\n}\n\n.newsItem-rank {\n  flex-basis: 25px;\n  font-size: 10pt;\n  text-align: right;\n}\n\n.newsItem-vote {\n  flex-basis: 15px;\n  text-align: center;\n}\n\n.newsItem-subtext {\n  margin-top: 4px;\n  font-size: 7pt;\n}\n\n.newsItem-subtext > a {\n  color: #828282;\n  text-decoration: none;\n}\n\n.newsItem-subtext > a:hover {\n  text-decoration: underline;\n}", ""]);
 
 	// exports
 

@@ -1,4 +1,15 @@
 # react-with-webpack
+### 环境搭建
+安装 webpack
+```
+npm install webpack -g
+```
+参数-g表示我们将全局(global)安装 webpack, 这样你就能使用 webpack 命令了.
+
+webpack 也有一个 web 服务器 webpack-dev-server, 我们也安装上
+```
+npm install webpack-dev-server -g
+```
 ### 安装依赖
 安装 React:
 ```
