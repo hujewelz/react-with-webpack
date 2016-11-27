@@ -1,8 +1,8 @@
 import React from 'react';
 import URL from 'url';
 import Moment from 'moment';
-import './newsitem.css';
-import ImageGrayArrow from '../grayarrow.gif';
+import '../styles/newsitem.css';
+import ImageGrayArrow from '../images/grayarrow.gif';
 
 
 export default class NewsItem extends React.Component {

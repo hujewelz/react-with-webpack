@@ -31920,8 +31920,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./newsheader.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./newsheader.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./newsheader.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./newsheader.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -48761,8 +48761,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./newsitem.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./newsitem.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./newsitem.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./newsitem.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -48807,8 +48807,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./newslist.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./newslist.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./newslist.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./newslist.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});

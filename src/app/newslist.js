@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsHeader from './newsheader.js';
 import NewsItem from './newsitem.js';
-import './newslist.css'
+import '../styles/newslist.css'
 
 export default class NewsList extends React.Component {
 
